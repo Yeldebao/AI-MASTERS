@@ -19,6 +19,23 @@ training, a one-factor-at-a-time hyperparameter sensitivity study, the ensemble,
 intervals and McNemar tests, computational cost, convergence, interpretability (Grad-CAM and attention rollout),
 a shortcut-learning test (the ScopeGuide box) and the critical analysis.
 
+## Results (test set, 1,200 images, NVIDIA L4)
+
+| Model | Accuracy (%) | Macro-F1 [95 % CI] | Params (M) | GMACs | Train time (s) | Latency (ms, batch 1) |
+|---|---|---|---|---|---|---|
+| Ensemble ViT-S + Hybrid | 93.83 | 0.938 [0.925, 0.952] | 37.8 | 9.47 | 353 | 17.6 |
+| **ViT-S/16** | **93.58** | **0.936 [0.923, 0.949]** | 21.7 | 4.60 | 190 | **7.2** |
+| ResNet-50 | 92.08 | 0.921 [0.906, 0.935] | 23.5 | 4.09 | 246 | 8.9 |
+| EfficientNet-B0 | 91.25 | 0.912 [0.897, 0.927] | **4.0** | **0.38** | 210 | 11.3 |
+| Hybrid R50+Transformer | 90.67 | 0.906 [0.890, 0.923] | 16.1 | 4.87 | 162 | 10.4 |
+
+Key findings (details in sections 14–15 of the notebook):
+* ViT-S/16 is significantly better than the other three models (McNemar p < 0.05); the ensemble's +0.003 over it is not significant.
+* Pretraining matters far more than architecture: training from scratch costs −0.19 (ViT-S) to −0.26 (EfficientNet-B0) macro-F1.
+* EfficientNet-B0 reaches 97 % of the best macro-F1 with 1/12 of the compute, but has the highest single-image GPU latency.
+* The main error for every model is esophagitis ↔ normal z-line, a fine-grained distinction.
+* All models partly rely on a dataset shortcut (the ScopeGuide box, present only in colonoscopies): masking it costs 0.014–0.034 macro-F1.
+
 ## How to run (Google Colab)
 
 1. Click the **Open in Colab** badge above.
