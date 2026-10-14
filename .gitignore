@@ -1,0 +1,13 @@
+# Data, caches and checkpoints are produced by the notebook (not versioned)
+outputs/
+kvasir-dataset-v2/
+*.zip
+*.npz
+*.pt
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+
+# Course material that is not part of the deliverable
+Kvasir_Models_V5.ipynb
+deep learning project instructions.rtf
