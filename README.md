@@ -1,6 +1,6 @@
 # Kvasir v2 — CNNs vs. Transformers vs. a CNN-Transformer hybrid
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GITHUB_USER/GITHUB_REPO/blob/main/Kvasir_CNN_vs_Transformer.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yeldebao/AI-MASTERS/blob/main/Kvasir_CNN_vs_Transformer.ipynb)
 
 Deep Learning final project: comparative evaluation of deep-learning models for the classification of
 gastrointestinal endoscopy images (**Kvasir v2**, 8 classes × 1,000 images), all trained under the same
