@@ -1,6 +1,6 @@
 # Kvasir v2 — CNNs vs. Transformers vs. a CNN-Transformer hybrid
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yeldebao/AI-MASTERS/blob/main/deep-learning-kvasir/Kvasir_CNN_vs_Transformer.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yeldebao/AI-MASTERS/blob/main/deep-learning-kvasir/Kvasir_CNN_vs_Transformer_V6.ipynb)
 
 Deep Learning final project: comparative evaluation of deep-learning models for the classification of
 gastrointestinal endoscopy images (**Kvasir v2**, 8 classes × 1,000 images), all trained under the same
@@ -37,7 +37,7 @@ VM; nothing has to be uploaded manually.
 
 ```bash
 pip install -r requirements.txt
-cd deep-learning-kvasir && jupyter notebook Kvasir_CNN_vs_Transformer.ipynb
+cd deep-learning-kvasir && jupyter notebook Kvasir_CNN_vs_Transformer_V6.ipynb
 ```
 
 A CUDA GPU is strongly recommended. If the dataset is already extracted somewhere, set the environment variable
