@@ -11,3 +11,8 @@ __pycache__/
 # Course material that is not part of the deliverable
 Kvasir_Models_V5.ipynb
 deep learning project instructions.rtf
+
+# LaTeX build files
+*.aux
+*.log
+*.out
