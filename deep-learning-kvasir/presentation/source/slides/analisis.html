@@ -14,7 +14,7 @@
       <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">ResNet-50</h3>
       <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Funcionó:</b></span> sesgo de localidad; converge en 2 épocas; mapas nítidos.</p>
       <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Falló:</b></span> 19 % de las esofagitis las llama línea Z.</p>
-      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#0e7c70"><b>Úsalo para:</b></span> el más robusto al artefacto.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#0e7c70"><b>Úsalo para:</b></span> explicar a clínicos; el que menos depende del recuadro ScopeGuide.</p>
     </div>
     <div style="display:flex; flex-direction:column; gap:10px; padding:26px 30px; background:#fdfcf9; border-left:8px solid #eb6834; border-radius:10px">
       <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">EfficientNet-B0</h3>
@@ -28,6 +28,6 @@
       <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Falló:</b></span> 47 % de pesos aleatorios.</p>
     </div>
   </div>
-  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7280">11 · Análisis — Ensamble</p>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7280">10 · Análisis — Ensamble: solo para segunda lectura offline (+0.003, no significativo, al doble de costo)</p>
   <aside>(35 s) ViT-S ganó, pero fue preentrenado con diez veces más imágenes: lo honesto es decir que gana un Transformer bien preentrenado, no que la atención le gane a la convolución. ResNet-50 converge rápido y explica mejor, ideal para clínicos. EfficientNet casi iguala con una doceava parte del cómputo. Y el híbrido perdió porque cambié el stage 4 preentrenado por capas aleatorias; aun así, sus errores son los más distintos a los de ViT, por eso entra al ensamble.</aside>
 </section>
