@@ -1,34 +1,33 @@
-<section id="analisis" data-transition="fade" style="background:#F6F5F0;color:#15243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0E7C70">Análisis crítico</p>
-<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Por qué ganó o perdió cada modelo</h2>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
-<div style="display:flex;flex-direction:column;gap:10px;background:#FDFCF9;padding:26px 30px;border-left:8px solid #1baf7a;border-radius:10px">
-<h3 style="font-size:34px;font-weight:600">ViT-S/16</h3>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Funcionó:</b> preentrenado con 10× más datos (ImageNet-21k); el mejor en esofagitis y línea Z.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Falló:</b> atención difusa, difícil de explicar; usa el atajo.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#0E7C70">Úsalo para:</b> máxima precisión y tiempo real en GPU (7.2 ms).</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px;background:#FDFCF9;padding:26px 30px;border-left:8px solid #2a78d6;border-radius:10px">
-<h3 style="font-size:34px;font-weight:600">ResNet-50</h3>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Funcionó:</b> sesgo de localidad; converge en 2 épocas; mapas nítidos.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Falló:</b> 19 % de las esofagitis las llama línea Z.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#0E7C70">Úsalo para:</b> explicar a clínicos; el más robusto al artefacto.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px;background:#FDFCF9;padding:26px 30px;border-left:8px solid #eb6834;border-radius:10px">
-<h3 style="font-size:34px;font-weight:600">EfficientNet-B0</h3>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Funcionó:</b> 97 % del mejor F1 con 1/12 del cómputo y 4 M parámetros.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Falló:</b> poca capacidad para lo sutil; lento con una sola imagen.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#0E7C70">Úsalo para:</b> hardware limitado y procesamiento por lotes.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px;background:#FDFCF9;padding:26px 30px;border-left:8px solid #4a3aa7;border-radius:10px">
-<h3 style="font-size:34px;font-weight:600">Híbrido R50 + Transformer</h3>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Funcionó:</b> errores distintos a ViT-S (por eso entra al ensamble).</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#15243A">Falló:</b> 47 % de pesos aleatorios en lugar del stage 4 preentrenado.</p>
-<p style="font-size:26px;line-height:1.35;color:#3D4A5C"><b style="color:#0E7C70">Úsalo para:</b> miembro de ensamble o encoder de segmentación.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">11 · Análisis — Ensamble: solo para segunda lectura offline (+0.003, no significativo, al doble de costo)</p>
-<aside>(35 s) ViT-S ganó, pero fue preentrenado con diez veces más imágenes: lo honesto es decir que gana un Transformer bien preentrenado, no que la atención le gane a la convolución. ResNet-50 converge rápido y explica mejor, ideal para clínicos. EfficientNet casi iguala con una doceava parte del cómputo. Y el híbrido perdió porque cambié el stage 4 preentrenado por capas aleatorias; aun así, sus errores son los más distintos a los de ViT, por eso entra al ensamble.</aside>
+<section id="analisis" data-transition="fade" style="display:flex; flex-direction:column; gap:32px; padding:128px 128px 160px; background:#f6f5f0">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#0e7c70">Análisis crítico</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.1; color:#15243a">Por qué ganó o perdió cada modelo</h2>
+  </div>
+  <div style="display:grid; gap:24px; grid-template-columns:1fr 1fr">
+    <div style="display:flex; flex-direction:column; gap:10px; padding:26px 30px; background:#fdfcf9; border-left:8px solid #1baf7a; border-radius:10px">
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">ViT-S/16</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Funcionó:</b></span> preentrenado con 10× más datos (ImageNet-21k); el mejor en esofagitis y línea Z.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Falló:</b></span> atención difusa, difícil de explicar.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#0e7c70"><b>Úsalo para:</b></span> máxima precisión y tiempo real en GPU (7.2 ms).</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:26px 30px; background:#fdfcf9; border-left:8px solid #2a78d6; border-radius:10px">
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">ResNet-50</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Funcionó:</b></span> sesgo de localidad; converge en 2 épocas; mapas nítidos.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Falló:</b></span> 19 % de las esofagitis las llama línea Z.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#0e7c70"><b>Úsalo para:</b></span> el más robusto al artefacto.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:26px 30px; background:#fdfcf9; border-left:8px solid #eb6834; border-radius:10px">
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">EfficientNet-B0</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Funcionó:</b></span> 97 % del mejor F1 con 1/12 del cómputo y 4 M parámetros.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Falló:</b></span> poca capacidad para lo sutil; lento con una sola imagen.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#0e7c70"><b>Úsalo para:</b></span> hardware limitado y procesamiento por lotes.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:26px 30px; background:#fdfcf9; border-left:8px solid #4a3aa7; border-radius:10px">
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">Híbrido R50 + Transformer</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Funcionó:</b></span> errores distintos a ViT-S (por eso entra al ensamble).</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.35; color:#3d4a5c"><span style="color:#15243a"><b>Falló:</b></span> 47 % de pesos aleatorios.</p>
+    </div>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7280">11 · Análisis — Ensamble</p>
+  <aside>(35 s) ViT-S ganó, pero fue preentrenado con diez veces más imágenes: lo honesto es decir que gana un Transformer bien preentrenado, no que la atención le gane a la convolución. ResNet-50 converge rápido y explica mejor, ideal para clínicos. EfficientNet casi iguala con una doceava parte del cómputo. Y el híbrido perdió porque cambié el stage 4 preentrenado por capas aleatorias; aun así, sus errores son los más distintos a los de ViT, por eso entra al ensamble.</aside>
 </section>

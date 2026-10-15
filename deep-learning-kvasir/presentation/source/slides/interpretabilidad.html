@@ -1,20 +1,19 @@
-<section id="interpretabilidad" data-transition="fade" style="background:#ECEAE3;color:#15243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0E7C70">Análisis · Interpretabilidad</p>
-<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Miran el lugar correcto; el error está en lo sutil</h2>
-</div>
-<div style="display:flex;gap:44px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:12px">
-<img src="/_blob/b78aef4a143238b40e788503fa7f9b26" alt="Grad-CAM y attention rollout de los cuatro modelos sobre un margen teñido, una esofagitis y una línea Z de test" style="width:1060px;height:542px;object-fit:contain;border-radius:8px">
-<p style="font-size:24px;line-height:1.35;color:#3D4A5C;width:1060px">Columnas: imagen · ResNet-50 · EfficientNet-B0 · ViT-S/16 · Híbrido (CNN) · Híbrido (atención). Filas: margen teñido, esofagitis, línea Z.</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:22px">
-<p style="font-size:26px;line-height:1.4;color:#3D4A5C"><b style="color:#2a78d6">ResNet-50:</b> mapas nítidos, sobre la lesión.</p>
-<p style="font-size:26px;line-height:1.4;color:#3D4A5C"><b style="color:#0E7C70">ViT-S/16:</b> atención difusa; a veces mira el recuadro.</p>
-<p style="font-size:26px;line-height:1.4;color:#3D4A5C"><b style="color:#4a3aa7">Híbrido:</b> pocos parches muy focalizados.</p>
-<p style="font-size:26px;line-height:1.4;color:#3D4A5C;background:#FDFCF9;padding:22px;border-radius:12px"><b style="color:#15243A">Error principal: esofagitis ↔ línea Z</b> (204 errores). Los mapas sí miran la unión esófago-gástrica: es una distinción fina.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">9 · Análisis — Grad-CAM (Selvaraju et al., 2017) y attention rollout (Abnar y Zuidema, 2020)</p>
-<aside>(30 s) Grad-CAM en las CNNs y attention rollout en los Transformers. ResNet-50 da los mapas más nítidos, sobre la lesión; ViT-S es difuso y a veces mira el recuadro verde; el híbrido es el más focalizado. El error más común es esofagitis contra línea Z, y los mapas sí miran la unión esófago-gástrica: no se equivocan de lugar, la diferencia es sutil.</aside>
+<section id="interpretabilidad" data-transition="fade" style="display:flex; flex-direction:column; gap:40px; padding:128px 128px 160px; background:#eceae3">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#0e7c70">Análisis · Interpretabilidad</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.1; color:#15243a">Falta de atención</h2>
+  </div>
+  <div style="display:flex; flex-direction:row; gap:44px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:12px">
+      <img src="/_blob/b78aef4a143238b40e788503fa7f9b26" alt="Grad-CAM y attention rollout de los cuatro modelos sobre un margen teñido, una esofagitis y una línea Z de test" style="width:1060px; height:542px; border-radius:8px; object-fit:contain">
+      <p style="width:1060px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.35; color:#3d4a5c">Columnas: imagen · ResNet-50 · EfficientNet-B0 · ViT-S/16 · Híbrido (CNN) · Híbrido (atención). Filas: margen teñido, esofagitis, línea Z.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:22px; flex:1">
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#3d4a5c"><span style="color:#2a78d6"><b>ResNet-50:</b></span> mapas nítidos, sobre la lesión.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#3d4a5c"><span style="color:#0e7c70"><b>ViT-S/16:</b></span> atención difusa; a veces mira el recuadro.</p>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#3d4a5c"><span style="color:#4a3aa7"><b>Híbrido:</b></span> pocos parches muy focalizados.</p>
+    </div>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7280">9 · Análisis — Grad-CAM</p>
+  <aside>(30 s) Grad-CAM en las CNNs y attention rollout en los Transformers. ResNet-50 da los mapas más nítidos, sobre la lesión; ViT-S es difuso y a veces mira el recuadro verde; el híbrido es el más focalizado. El error más común es esofagitis contra línea Z, y los mapas sí miran la unión esófago-gástrica: no se equivocan de lugar, la diferencia es sutil.</aside>
 </section>

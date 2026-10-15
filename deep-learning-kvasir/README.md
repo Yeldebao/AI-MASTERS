@@ -42,7 +42,7 @@ Key findings (details in sections 14–15 of the notebook):
 |---|---|
 | Notebook (executed on an NVIDIA L4) | [`Kvasir_CNN_vs_Transformer_V6.ipynb`](Kvasir_CNN_vs_Transformer_V6.ipynb) |
 | IEEE conference paper | [`paper/paper.pdf`](paper/paper.pdf) (LaTeX source and figures in `paper/`) |
-| Presentation (Spanish, 12 slides) | [`presentation/presentacion_kvasir.pdf`](presentation/presentacion_kvasir.pdf), speaker notes in [`presentation/notas_del_orador.md`](presentation/notas_del_orador.md) |
+| Presentation (Spanish, 11 slides) | [`presentation/presentacion_kvasir.pdf`](presentation/presentacion_kvasir.pdf), speaker notes in [`presentation/notas_del_orador.md`](presentation/notas_del_orador.md) |
 
 ## How to run (Google Colab)
 

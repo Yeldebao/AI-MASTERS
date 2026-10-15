@@ -1,32 +1,31 @@
-<section id="protocolo" data-transition="fade" style="background:#F6F5F0;color:#15243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0E7C70">Método · Protocolo común</p>
-<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Un protocolo común para los cuatro modelos</h2>
-</div>
-<div style="display:flex;gap:56px;align-items:start">
-<div style="width:580px;display:flex;flex-direction:column;gap:20px">
-<h3 style="font-size:34px;font-weight:600">Preprocesamiento</h3>
-<ul style="font-size:28px;line-height:1.45;color:#3D4A5C">
-<li>Split estratificado 70/15/15: 5,600 / 1,200 / 1,200</li>
-<li>Resize a 256 px y recorte de 224 px</li>
-<li>Flips, rotación ±15°, brillo y contraste ±10 %</li>
-<li><b style="color:#15243A">Sin cambios de tono:</b> el color es diagnóstico (tinción azul, enrojecimiento)</li>
-<li>1,000 imágenes por clase: no hace falta rebalancear</li>
-</ul>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:20px">
-<h3 style="font-size:34px;font-weight:600">Hiperparámetros y por qué</h3>
-<table style="font-size:28px;color:#3D4A5C">
-<tr><th style="width:36%;text-align:left;color:#15243A">Valor</th><th style="width:64%;text-align:left;color:#15243A">Razón</th></tr>
-<tr><td>224 px</td><td>Resolución nativa de los pesos preentrenados</td></tr>
-<tr><td>Batch 32</td><td>175 actualizaciones por época; el ruido regulariza</td></tr>
-<tr><td>AdamW, LR 1e-4</td><td>Ajustar sin borrar lo aprendido en ImageNet</td></tr>
-<tr><td>Warm-up + coseno</td><td>Protege los pesos al inicio; pasos finos al final</td></tr>
-<tr><td>Label smoothing 0.1</td><td>Menos sobreconfianza, mejores probabilidades</td></tr>
-<tr><td>≤20 épocas, paciencia 4</td><td>Early stopping en macro-F1 de validación</td></tr>
-</table>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">4 · Método — una semilla (42), GPU NVIDIA L4, bfloat16; corrida completa en 44.7 min</p>
-<aside>(30 s) Todos comparten el protocolo. Aumento datos con flips y rotaciones, pero no toco el tono: el color es diagnóstico. 224 píxeles porque es la resolución nativa de los pesos; batch 32 para tener 175 actualizaciones por época; AdamW con 1e-4 para ajustar sin borrar lo aprendido; y warm-up más coseno, porque al inicio la cabeza aleatoria genera gradientes que dañarían los pesos preentrenados.</aside>
+<section id="protocolo" data-transition="fade" style="background:#f6f5f0">
+  <p id="e1-g3e5gu" style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7280">4 · Método — una semilla (42), GPU NVIDIA L4; corrida completa en 44.7 min</p>
+  <div id="p3650b2b56c2fr0-9ee9dc8d" style="position:absolute; top:128px; left:128px; width:1664px; height:120px; display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#0e7c70">Método · Protocolo común</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.1; color:#15243a">Un protocolo común para los cuatro modelos</h2>
+  </div>
+  <div id="p3650b2b56c2fr1-9ee9dc8d" style="position:absolute; top:292px; left:128px; width:1664px; height:528px; display:flex; flex-direction:row; gap:56px; align-items:start">
+    <div style="width:580px; display:flex; flex-direction:column; gap:20px">
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">Preprocesamiento</h3>
+      <ul style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; line-height:1.45; color:#3d4a5c">
+        <li>Split estratificado 70/15/15: 5,600 / 1,200 / 1,200</li>
+        <li>Recorte de 224 px</li>
+        <li>Flips, rotación ±15°, brillo y contraste ±10 %</li>
+        <li><span style="color:#15243a"><b>Sin cambios de tono:</b></span> el color es diagnóstico (tinción azul, enrojecimiento)</li>
+        <li>1,000 imágenes por clase: no hace falta rebalancear</li>
+      </ul>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:20px; flex:1">
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:34px; font-weight:600; color:#15243a">Hiperparámetros y por qué</h3>
+      <table style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#3d4a5c">
+        <tr><th style="width:36%; color:#15243a">Valor</th><th style="width:64%; color:#15243a">Razón</th></tr>
+        <tr><td>224 px</td><td>Resolución nativa de los pesos preentrenados</td></tr>
+        <tr><td>Batch 32</td><td>175 actualizaciones por época; el ruido regulariza</td></tr>
+        <tr><td>AdamW, LR 1e-4</td><td>Ajustar sin borrar lo aprendido en ImageNet</td></tr>
+        <tr><td>Warm-up + coseno</td><td>Protege los pesos al inicio; pasos finos al final</td></tr>
+        <tr><td>≤20 épocas, paciencia 4</td><td>Early stopping en validación.</td></tr>
+      </table>
+    </div>
+  </div>
+  <aside>(30 s) Todos comparten el protocolo. Aumento datos con flips y rotaciones, pero no toco el tono: el color es diagnóstico. 224 píxeles porque es la resolución nativa de los pesos; batch 32 para tener 175 actualizaciones por época; AdamW con 1e-4 para ajustar sin borrar lo aprendido; y warm-up más coseno, porque al inicio la cabeza aleatoria genera gradientes que dañarían los pesos preentrenados.</aside>
 </section>
