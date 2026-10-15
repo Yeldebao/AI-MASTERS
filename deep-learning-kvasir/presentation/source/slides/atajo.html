@@ -1,0 +1,22 @@
+<section id="atajo" data-transition="fade" style="background:#F6F5F0;color:#15243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0E7C70">Análisis · Generalización</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Todos aprendieron un atajo: el recuadro ScopeGuide</h2>
+</div>
+<div style="display:flex;gap:48px;align-items:start">
+<img src="/_blob/496a39d98f7a528b4d2535e65a2df3b0" alt="Porcentaje de imágenes de cada clase con el recuadro ScopeGuide: ciego 98 %, márgenes teñidos 62 %, pólipos teñidos 61 %, pólipos 52 %, colitis 33 %, esofagitis, píloro y línea Z 0 %" style="width:820px;height:500px;object-fit:contain">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:28px;line-height:1.4;color:#3D4A5C">Solo existe en colonoscopías: delata «colon». Al taparlo en test, <b style="color:#15243A">todos pierden F1</b>.</p>
+<table style="font-size:28px;color:#3D4A5C">
+<tr><th style="width:62%;text-align:left;color:#15243A">Modelo</th><th style="width:38%;text-align:left;color:#15243A">Δ macro-F1</th></tr>
+<tr><td>ResNet-50 (más robusto)</td><td>−0.014</td></tr>
+<tr><td>ViT-S/16</td><td>−0.025</td></tr>
+<tr><td>Ensamble</td><td>−0.026</td></tr>
+<tr><td>EfficientNet-B0</td><td>−0.028</td></tr>
+<tr><td>Híbrido (menos robusto)</td><td>−0.034</td></tr>
+</table>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">10 · Análisis — recuadro en el 38 % de las imágenes; todos los IC 95 % excluyen el cero</p>
+<aside>(30 s) El hallazgo más interesante: el recuadro verde ScopeGuide solo existe en colonoscopías. Está en el 98 por ciento de las imágenes de ciego y en ninguna de esófago o estómago, así que verlo ya dice "colon". Al taparlo, todos pierden F1. ResNet-50 es el más robusto; el híbrido el que más depende. En otro hospital, con otro equipo, esto podría fallar.</aside>
+</section>

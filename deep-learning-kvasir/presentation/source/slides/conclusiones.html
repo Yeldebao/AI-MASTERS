@@ -1,0 +1,18 @@
+<section id="conclusiones" data-transition="fade" style="background:#15243A;color:#F6F5F0;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#7FD1C3">Conclusiones</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Lo que importa no es solo la arquitectura</h2>
+</div>
+<ol style="font-size:32px;line-height:1.45;color:#DCE7E5">
+<li><b style="color:#F6F5F0">ViT-S/16 es el mejor (0.936, p &lt; 0.05),</b> pero partió de 10× más datos de preentrenamiento.</li>
+<li><b style="color:#F6F5F0">El preentrenamiento domina:</b> −0.19 a −0.26 sin él; por eso el híbrido quedó último.</li>
+<li><b style="color:#F6F5F0">La eficiencia depende del despliegue:</b> B0 usa 1/12 del cómputo, pero es el más lento por imagen.</li>
+<li><b style="color:#F6F5F0">Todos usan un atajo del dataset:</b> el recuadro ScopeGuide debe quitarse al entrenar.</li>
+</ol>
+<div style="display:flex;flex-direction:column;gap:12px;background:#1F3150;padding:28px 32px;border-radius:12px">
+<p style="font-size:28px;font-weight:600;color:#7FD1C3">Trabajo futuro</p>
+<p style="font-size:28px;line-height:1.4;color:#DCE7E5">CNN preentrenada en ImageNet-21k (BiT) · preentrenamiento autosupervisado en HyperKvasir · híbrido con capas Transformer preentrenadas · quitar el recuadro y validar en otro hospital</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#BFD8D5">12 · Código, notebook ejecutado y paper: github.com/Yeldebao/AI-MASTERS → deep-learning-kvasir</p>
+<aside>(25 s) En resumen: ViT-S es el mejor, con la advertencia del preentrenamiento; el preentrenamiento pesa más que la arquitectura; la eficiencia depende del despliegue; y todos aprendieron un atajo que hay que quitar. Como trabajo futuro, separar arquitectura de preentrenamiento y validar en otro hospital. Todo está en GitHub. Gracias.</aside>
+</section>
