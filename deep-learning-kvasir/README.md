@@ -1,4 +1,4 @@
-# Kvasir v2 — CNNs vs. Transformers vs. a CNN-Transformer hybrid
+# Kvasir v6 — CNNs vs. Transformers vs. a CNN-Transformer hybrid
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yeldebao/AI-MASTERS/blob/main/deep-learning-kvasir/Kvasir_CNN_vs_Transformer_V6.ipynb)
 
