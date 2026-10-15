@@ -3,7 +3,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yeldebao/AI-MASTERS/blob/main/deep-learning-kvasir/Kvasir_CNN_vs_Transformer_V6.ipynb)
 
 Deep Learning final project: comparative evaluation of deep-learning models for the classification of
-gastrointestinal endoscopy images (**Kvasir v2**, 8 classes × 1,000 images), all trained under the same
+gastrointestinal endoscopy images (**Kvasir v6**, 8 classes × 1,000 images), all trained under the same
 experimental protocol.
 
 | Family | Model | Pretrained weights (timm) |
