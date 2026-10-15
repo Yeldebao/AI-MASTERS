@@ -24,7 +24,7 @@
 
 (25 s) A la izquierda, desempeño contra cómputo: EfficientNet-B0 logra el 97 por ciento del mejor F1 con una doceava parte de las operaciones. Pero a la derecha, con una sola imagen, es el más lento: sus capas depthwise están limitadas por memoria. La eficiencia depende de dónde se despliegue el modelo.
 
-## 7. Convergen rápido; el híbrido se vuelve inestable
+## 7. Convergen en 2–3 épocas; el híbrido tiene sobreajuste
 
 (20 s) Por el preentrenamiento, todos llegan al 95 por ciento de su mejor F1 en dos o tres épocas. ViT-S siguió mejorando hasta la 19. En el híbrido la pérdida de validación sube después de la época 7: sus capas Transformer nuevas no se estabilizan con tan pocos datos.
 
